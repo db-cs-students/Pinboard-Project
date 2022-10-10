@@ -37,29 +37,11 @@ The goal of this project is to create a "pinboard" of images that you can collec
 
 You will be able to create new cards with custom tags and then filter tags via the search bar or by clicking on a tag.
 
-![Example of the Moodboard functionality. You can add a new card, search tags and filter by tag buttons.](https://docs.repl.it/images/teamsForEducation/PinboardProject/moodboard.gif)
+![Example of the Moodboard functionality. You can add a new card, search tags and filter by tag buttons.](https://replit-docs-images.util.repl.co/images/teamsForEducation/pinboard-project/pinboard.gif)
 
-## Planning
+## Opening the project
 
-Before we jump into the code, let's start by creating a wireframe to plan the layout and functionality of our project.
-
-![Landing page displaying cards with images and tags.](https://docs.repl.it/images/teamsForEducation/PinboardProject/wireframe.png)
-
-This will be a single-page website with a header, a search bar, an `add card` button and a collection of cards.
-
-Some initial card data is stored in a `.json` file, which will be displayed by default. Each card has a unique image URL, as well as custom, user-generated tags. The user will be able to filter the cards by searching for tags or by clicking on a tag within a card.
-
-To add a new card, a modal will pop up that will allow the user to enter an image URL and custom tags.
-
-![Popup modal with a form that allows a user to create new cards.](https://docs.repl.it/images/teamsForEducation/PinboardProject/modal-wireframe.png)
-
-## Opening the project on Repl.it
-
-We will be using Repl.it to code our project. Repl.it allows you to write code and execute it all in the browser.
-
-[Open the Project on Repl.it](https://repl.it/team/dbcs/011-Frontend-Development-Pin-Board){: style="border: 1px solid #ccc; border-radius: 5px; padding: 8px 10px; background: #efefef;"}
-
-You will find the basic files needed for our front-end web project. Open each of the files but don't make any changes yet. Note the purpose of each file and the exension used.
+You'll need to migrate this code to Gitea. In the repository, you will find the basic files needed for our front-end web project. Open each of the files but don't make any changes yet. Note the purpose of each file and the exension used.
 
 ```yaml
 index.html # Renders the document
@@ -68,23 +50,9 @@ script.js # Updates HTML based on interactions
 data.json # Initial data for pins
 ```
 
-**Note:** Repl.it offers several features including keyboard shortcuts. Type `Ctl+k` on the Chromebooks or `Cmd+k` on the MacBooks.
-
-## Connecting the project to GitHub
-
-As we have previously, we will use GitHub for version control. You will need to practice GitFlow as you build this project.
-
-On the left-hand side of Repl.it you should see a Version Control tab. The first thing you'll need to do is `Create a Git Repo`.
-
-![Track and rollback changes](../images/track.png){: style="border: 1px solid #ccc;"}
-
-Once you initialized Git, click the `Connect to GitHub` button. Name your repository `Pin Board` and make sure you select `Public` for visibility. **Note:** You may need to connect to GitHub first. Read the prompts carefully and be sure to allow Repl.it to access your repositories.
-
-![Connect to GitHub](../images/new_repo.png){: style="border: 1px solid #ccc;"}
-
 ## Starting a feature branch
 
-Now that you have connected to GitHub, you need to start a new branch to begin working. This is the first step in the GitFlow. Let's call this initial branch `feature/skeleton`. Once you have switch to the feature branch, move on to make the first changes to your app.
+Now that you have migrated and cloned your repository, you need to start a new branch to begin working. This is the first step in the GitFlow. Let's call this initial branch `feature/skeleton`. Once you have switch to the feature branch, move on to make the first changes to your app.
 
 # Skeleton
 
@@ -92,7 +60,7 @@ Now that you have connected to GitHub, you need to start a new branch to begin w
 
 We'll start off with a basic HTML skeleton, hard-coding the elements in our wireframe, which we are going to populate with data later on in this tutorial.
 
-Open the `index.html` file and update the contents. While it is tempting to copy and paste, this will hold you back later on. Instead use the HTML alread present in the file. Read through the code below, and update the code on Repl.it with what is missing.
+Open the `index.html` file and update the contents. While it is tempting to copy and paste, this will hold you back later on. Instead use the HTML alread present in the file. Read through the code below, and update the code in the `index.html` with what is missing.
 
 ```html
 <!DOCTYPE html>
@@ -141,37 +109,15 @@ Above we have our basic HTML skeleton that we will expand throughout this tutori
 </html>
 ```
 
-Now that you have added the HTML skeleton, click the "Run" button at the top. You should see our basic HTML form populate in the repl browser to the right, like below:
-
-![Basic HTML skeleton without styling](https://docs.repl.it/images/teamsForEducation/PinboardProject/html-skeleton.png)
-
-### Commit Your Changes
-
-Now that you have updated the `index.html`, open the shell on the bottom right. This is a Bash shell prompt. You'll see the name of your project followed by a `$`. Bash allows you to type commands for the computer to execute. We call this kind of interace a CLI or command line interface.
-
-The first step is to check the status of git.
+Now that you have added the HTML skeleton, let's run a simple server to test our website. Open terminal and navigate to your project folder.
 
 ```bash
-$ git status
+python -m http.server 3000
 ```
 
-You should see a list of files that have been changed in red. If you go to the Version Control tab, you should see the same set of files listed. Now let's stage the changes to be commited to the repository. The command this time is `git add` and we'll add a `.` indicate all changes. You can also add individual files using `git add filename.ext`.
+Open your web browser and navigate to `http://localhost:3000`. You should see our basic HTML form.
 
-```bash
-$ git add .
-```
-
-It will not seem like anything has happened but if you use `git status` again you will see that the changes have been staged and are green. The next step is to commit the changes to the repository. We will use `git commit` with the message flag. When we are using the CLI you can add flags to alter commands. Usually they are a `-` followed by a letter. In this case we'll use `-m` which stands for message. Then we'll add a short message explaining the changes we have made.
-
-```bash
-$ git commit -m 'Update index with html skeleton'
-```
-
-The next step is to push the changes to GitHub. You can do this from the Version Control tab if you can't remember your password or you can use the command below. Keep in mind that you'll have to enter your GitHub username and password. In the CLI, passwords won't showup as you type, but it is recording. This is a little tricky at first. The command here is git push, and we supply the remote branch `origin` and the local branch `feature/skeleton`. This will push our local changes to GitHub.
-
-```bash
-$ git push origin feature/skeleton
-```
+Now that you have added a basic skeleton, commit your changes using the message 'Update index with html skeleton'
 
 ## Adding styling
 
@@ -216,15 +162,25 @@ h1 {
 }
 ```
 
-Click the "Run" button again to see your plain html form change into our newly styled page. Your page should now look like this:
-
-![Page after adding the stylesheet and fonts](https://docs.repl.it/images/teamsForEducation/PinboardProject/page-after-adding-css.png)
+Save your changes, and check your page in the web browser. Did the style and fonts change?
 
 ### Commit Your Changes
 
-Now that you have made your changes. You may use the Version Control tab or get some practice using the CLI. Remember to push the changes to GitHub
+Now that you have made your changes. Commit and push your code.
 
-Now that you are finished with the features for the skeleton, go to GitHub and open a Pull Request. Follow GitFlow and merge the changes with your main branch. Once you have merged your changes, go to Repl.it and switch back to the Main branch. If you are in the Version Control tab you should see a button to pull. This will update the local main branch to match GitHub with all the changes.
+Now that you are finished with the features for the skeleton, let's merge the changes from your feature branch to your main branch. Checkout your main branch.
+
+```bash
+git checkout main
+```
+
+Now merge the changes:
+
+```bash
+git merge feature/skeleton
+```
+
+Your changes are now part of the main branch.
 
 # Writing data to your HTML
 
@@ -288,9 +244,7 @@ Your `index.html` should now look like this:
 </html>
 ```
 
-### Commit Your Changes
-
-Now it's time to commit your changes. Follow the GitFlow to add you changes using the Version Control tab or the CLI. Remember to push your changes. From now on, I won't remind you to commit and push. This is something you should do after each change, and eventually it should be a habit.
+Commit your changes.
 
 ## Using Javascript to render a card
 
@@ -459,8 +413,6 @@ tagButton.onclick = () => {
 };
 ```
 
-![tagButton onclick location](https://docs.repl.it/images/teamsForEducation/PinboardProject/tagbutton-onclick.png)
-
 The `onClick()` function filters the cards in the card container by checking which cards contain tags with the same innerHTML.
 
 ## Adding a modal
@@ -595,8 +547,6 @@ Above we create the button and set the display property to "block" (from a defau
 
 When clicking on the `Add a card` button, the modal form should appear and you should be able to close it by clicking the X at the top right, or anywhere outside of the modal contents.
 
-![Styled modal containing a form and submit button](https://docs.repl.it/images/teamsForEducation/PinboardProject/styled-modal.png)
-
 ## Create a new card with custom input data
 
 Lastly, we need to use the user data that we collected from the modal inputs to create and append a new card to our collection.
@@ -634,6 +584,10 @@ Specifically the code:
 4. Creates a `newCard` variable that stores the new data in the same format as in the existing `data.json` format.
 5. Adds a `newCard` to your existing card array.
 6. Sets the modal display to `none` to close the modal.
+
+### Commit and merge
+
+Commit your changes. Checkout the main branch. Merge your feature branch with the main.
 
 # Make It Your Own
 
