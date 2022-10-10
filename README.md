@@ -1,6 +1,6 @@
 # Pinboard Project
 
-**Note:** This project has been adapted from the official Repl.it Docs. Much of the content has been updated to include use of GitHub and GitFlow.
+**Note:** This project has been adapted from the official Repl.it Docs. Much of the content has been updated to include use of Git.
 
 **Table of Content**
 
