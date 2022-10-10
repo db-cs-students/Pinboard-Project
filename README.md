@@ -37,7 +37,7 @@ The goal of this project is to create a "pinboard" of images that you can collec
 
 You will be able to create new cards with custom tags and then filter tags via the search bar or by clicking on a tag.
 
-![Example of the Moodboard functionality. You can add a new card, search tags and filter by tag buttons.](https://replit-docs-images.util.repl.co/images/teamsForEducation/pinboard-project/pinboard.gif)
+![Example of the Moodboard functionality. You can add a new card, search tags and filter by tag buttons.](pinboard.gif)
 
 ## Opening the project
 
